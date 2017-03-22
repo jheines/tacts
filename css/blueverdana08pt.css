@@ -1,0 +1,149 @@
+@charset "ISO-8859-1";
+
+/**
+ *  File blueverdana08pt.css - Style Sheet for Entire UML Web Site
+ *  Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
+ *  Copyright (c) 2004-2014 by Jesse M. Heines.  All rights reserved, but may be freely 
+ *    copied or extracted from for educational purposes with credit to the author.
+ *  updated by JMH on January 24, 2004 at 07:42 PM
+ *  updated by JMH on December 24, 2006 at 07:28 PM
+ *  updated by JMH on January 17, 2009 at 10:33 AM
+ *  updated by JMH on August 25, 2009 at 11:35 AM
+ *  updated by JMH on September 12, 2010 at 5:11 PM
+ *  updated by JMH on February 6, 2011 at 2:12 PM
+ *  updated by JMH on March 15, 2012 at 10:03 AM
+ *  updated by JMH on April 1, 2012 at 7:39 PM
+ *  updated by JMH on August 15, 2012 at 3:05 PM
+ *  updated by JMH on March 18, 2013 at 1:05 PM
+ *  updated by JMH on September 18, 2014 at 10:05 PM to add "Ubuntu+Mono" font family to pre and code and tt
+ *  updated by JMH on September 29, 2014 at 2:34 PM to fix "Ubuntu Mono" (without +!) in rules
+ *  updated by JMH on August 28, 2015 at 10:58 PM to add media print here from CourseHome.css
+ *  updated by JMH on October 13, 2016 at 10:53 AM to add https: to @import url for Chrome
+ *
+ *  N.B. slash+star is required for Mozilla/Firefox, ... *breaks* CSS.
+ *  comment { ... } generates a CSS error in Firefox.
+ *  The @charset directive is required for Google Chrome and Mozilla Firefox.
+ */
+
+@import url( https://fonts.googleapis.com/css?family=Ubuntu+Mono ) ;
+
+.bluebg        { background-color: #A5C6EF }
+.blackborder   { border-top-width: 1px ; border-top-style: solid ; border-top-color: #000000 ;
+                 border-left-width: 1px ; border-left-style: solid ; border-left-color: #000000 ;
+                 border-right-width: 1px ; border-right-style: solid ; border-right-color: #000000 ;
+                 border-bottom-width: 1px ; border-bottom-style: solid ; border-bottom-color: #000000 }
+.boxmargin     { padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px }
+.fsz11         { font-size: 9pt ; font-family: Verdana, Arial, Helvetica, sans-serif }
+.indent        { text-indent: 30px }
+.ital, .italic { font-style: italic }
+.marginbot5    { margin-bottom: 5px }
+.marginleft40  { margin-left: 40px }
+.nobold        { font-weight: normal }
+.nobot         { margin-bottom: 0 }
+.nobreak       { white-space: nowrap }
+.noital        { font-style: normal }
+.notop         { margin-top: 0 }
+.notopbot      { margin-top: 0 ; margin-bottom: 0 }
+.pagebreak     { page-break-before: always }
+.pindent       { margin-left: 10px ; margin-right: 10px ; margin-top: 2px ; margin-bottom: 4px }
+
+/* updated by JMH on July 15, 2013 at 11:02 AM */
+.bluereverse, .bluereverse20px0px, .bluereverse20px99px { 
+  font-style: normal ; 
+  color: white ; 
+  background-color: blue ; 
+  border-bottom: 3px solid blue ;
+  margin: 5px 5% 5px 5% }
+.bluereverse20px0px  { margin-left: 20px ; margin-right: 0px }
+.bluereverse20px99px { margin-left: 20px ; margin-right: 99px }
+/*
+.bluereverse          { font-style: normal ; color: white ; background-color: blue ;
+                        margin-left: 5% ; margin-right: 5% ; border-bottom: 3px solid blue ;
+                        margin-bottom: 5px ; margin-top: 5px }
+.bluereverse20px0px   { font-style: normal ; color: white ; background-color: blue ;
+                        margin-left: 20px ; margin-right: 0px ; border-bottom: 3px solid blue ;
+                        margin-bottom: 5px ; margin-top: 5px }
+.bluereverse20px99px  { font-style: normal ; color: white ; background-color: blue ;
+                        margin-left: 20px ; margin-right: 99px ; border-bottom: 3px solid blue ;
+                        margin-bottom: 5px ; margin-top: 5px }
+*/
+
+/* updated by JMH on March 15, 2012 at 10:02 AM */
+a:link, a:active, a:visited { color: blue ; text-decoration: none }
+a:hover { text-decoration: underline }
+
+.linknoline:link, .linknoline:active, .linknoline:visited { text-decoration: none } 
+
+.bluelink, .bluelink:link, .bluelink:active, .bluelink:visited { color: blue }
+.bluelink:hover { text-decoration: underline }
+.bluelinknoline, .bluelinknoline:link, .bluelinknoline:active, .bluelinknoline:visited { color: blue ; text-decoration: none } 
+.bluelinknoline:hover { text-decoration: underline }
+
+.graybackground { background-color: #A2A2A2 } 
+
+.greenlinknoline:link, .greenlinknoline:active, .greenlinknoline:visited { color: #008000 ; text-decoration: none } 
+
+.whitelink:link, .whitelink:active, .whitelink:visited { color: white ; text-decoration: none }
+.whitelinkunderlined:link, .whitelinkunderlined:active, .whitelinkunderlined:visited { color: white }
+.whitelinknoline:link, .whitelink:active, .whitelink:visited { color: white ; text-decoration: none }
+
+.times { font-family: "Times New Roman", Times, serif ; font-size: 10pt }
+.timesital { font-family: "Times New Roman", Times, serif ; font-size: 10pt ; font-style: italic}
+
+.colorRed { color: red }
+.colorBlue { color: blue }
+
+.colorRedBold { color: red ; font-weight: bold }
+.colorBlueBold { color: blue ; font-weight: bold }
+
+.nobr { white-space: nowrap }
+
+p.hanging30px  { margin-left: 30px ; text-indent: -25px }
+p.hanging35px  { margin-left: 35px ; text-indent: -26px }
+
+@media screen
+{
+  p.hanging100px { margin-left: 100px ; text-indent: -80px }
+}
+@media print
+{
+  p.hanging100px { margin-left: 100px ; text-indent: -60px }
+}
+
+body, blockquote, h3, h4, h5, h6, li, p, td, th
+     { font-family: Verdana, Arial, Helvetica, sans-serif ; font-size: 8pt }
+code, pre
+     { font-family: "Ubuntu Mono", "Lucida Sans Typewriter", "Lucida Console", Terminal, "Courier New", Courier ;
+       font-size: 9pt ; font-weight: normal ; color: #202080 }
+tt   { font-family: "Ubuntu Mono", "Lucida Sans Typewriter", "Lucida Console", Terminal, "Courier New", Courier }
+h1, h2, h3, h4, h5, h6  { color: blue }
+h1   { font-size: 14pt }
+h2   { font-size: 11pt }
+h3   { font-size: 10pt ; font-style: italic }
+h4   { }
+h5   { font-style: italic ; font-weight: normal }
+h6   { font-style: normal ; font-weight: normal ; font-size: 6pt }
+
+h1.large { font-size: 18pt }
+h5.bold { font-weight: bold }
+
+.quoteObsolete  { color: #008800 ; font-weight: normal }
+.quote    { color: black ; font-weight: normal }
+h3.quote  { margin-top: 5px ; margin-bottom: 0px ; font-size: 8pt ; font-style: normal ; margin-left: 20px }
+h4.quote  { margin-top: 0px ; margin-bottom: 5px ; font-size: 7pt ; font-style: italic ; margin-left: 40px }
+
+/* added by JMH on January 20, 2014 at 9:18 AM to hide "Go to" messages when printing
+ * moved by JMH on August 28, 2015 at 10:55 PM to blueverdana08pt.css (this file) because 
+ *    this file is loaded by JavaScript and is therefore loaded after the CSS files 
+ */
+@media print {
+  #gototeaching, #gototeachingheader, #gototeachingleftheader, 
+  #gotocourse, #gotocourseheader, #gotocoursetopleft,
+  #gototeachingheader a:link, #gototeachingheader a:active, #gototeachingheader a:visited {
+    display: none ;
+    /* color: white ; */
+    /* visibility : hidden ; */
+    /* opacity : 0 ; */
+    /* color : red ; */
+  }
+}
