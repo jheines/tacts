@@ -1,0 +1,76 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/**
+ *  File:  /~heines/css/quotes.css
+ *  Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
+ *  Copyright (c) 2011 by Jesse M. Heines.  All rights reserved.  May be freely
+ *    copied or excerpted for educational purposes with credit to the author.
+ *  updated by JMH on February 9, 2013 at 9:07 AM
+ *  updated by JMH on July 1, 2015 at 9:05 AM
+ *  
+ *  Reminders:  >  direct child selector
+ *              +  adjacent sibling selector
+ *             ^=  beginning substring attribute value selector
+ *             $=  ending substring attribute value selector
+ *             *=  arbitrary substring atribute value selector (anywhere in the attribute text)
+ */
+
+h2       { margin-top: 15px }
+h3.quote { margin-top: 5px ; margin-bottom: 0px ; font-size: 8pt ; font-style: normal ; margin-left: 20px }
+h4.quote { margin-top: 0px ; margin-bottom: 5px ; font-size: 7pt ; font-style: italic ; margin-left: 40px }
+h3.quote, h4.quote, h5.quote { 
+  color: black ;
+  font-weight: normal ;
+}
+/*
+  Classes quotenobot and quotenoital (from css/quotes.css) are needed to override the 
+  margin and font-style settings in blueverdana.css.  Using nobot from blueverdana.css
+  does not appear to be sufficient.  In addition, note that both classes are needed,
+  that is quote and quotenobot or quotenoital.
+  updated by JMH on July 1, 2015 at 9:04 AM
+*/
+h5.quotenobot {
+  margin-bottom: 0 ;
+h5.quotenoital {
+  font-style: normal ;
+}
+
+/**
+ *  N.B. a.toplink added on March 23, 2012 at 12:05 PM to explicitly 
+ *    override the a blue color coming from (I believe) blueverdana.css.
+ *  Original of this code is in /~heines/TUES/css/Resources.css.
+ */
+.toplink, a.toplink {
+  background-color: #09F ;          /* light blue */
+  color: white ;
+  border-bottom: 1px solid #09F ;
+  padding: 0px 0.75em ;
+  /* font-size: 8pt ; */            /* removed July 15, 2013 at 12:05 PM */
+  font-weight: normal ;
+  text-decoration: none ;
+  -moz-border-radius: 3px ;
+  -webkit-border-radius: 3px ;
+  border-radius: 3px ;
+}
+
+.toplink:hover, a.toplink:hover {
+  color: #00F ;
+  background-color: #0FF ;          /* light blue */
+  border-bottom: 1px solid #0FF ;   /* light blue */
+}
+
+h2 img {
+	margin-left: 20px ;
+}
+
+#imgWhenWordsFail {
+  -moz-border-radius: 8px ;
+  -webkit-border-radius: 8px ;
+  border-radius: 8px ;
+  /* for shadow: x-offset, y-offset, blur, choke (spread length), color, inset (optional) */
+  /* see CSS3 Visual Quickstart Guide by Teague, pp. 300-301 */
+  -moz-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  -webkit-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.75) ;
+}

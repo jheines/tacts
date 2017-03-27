@@ -1,0 +1,736 @@
+@charset "utf-8";
+/* CSS Document */
+
+/** 
+ *  File:  /~heines/css/CourseHome.css
+ *  Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
+ *  Copyright (c) 2012 by Jesse M. Heines.  All rights reserved.  May be freely 
+ *    copied or excerpted for educational purposes with credit to the author.
+ *  updated by JMH on September 10, 2014 at 10:20 AM
+ *  updated by JMH on November 7, 2014 at 11:47 AM to add overflow: hidden to horizontal menu
+ *  updated by JMH on December 2, 2014 at 4:44 PM to remove h3 font-size override
+ *  updated by JMH on January 29, 2015 at 1:29 PM to add .acadcalcolor and .notcolor for lecture note listings
+ *  updated by JMH on August 23, 2015 at 8:43 PM to add .pagebreakbefore as a synonym for .pagebreak
+ *  updated by JMH on August 28, 2015 at 10:58 PM to move media print to blueverdana08pt.css
+ *  
+ *  Reminders:  >  direct child selector
+ *              +  adjacent sibling selector
+ *             ^=  beginning substring attribute value selector
+ *             $=  ending substring attribute value selector
+ *             *=  arbitrary substring atribute value selector (anywhere in the attribute text)
+ */
+
+/* colors for lecture notes listings in classnotes.jsp */
+.acadcalcolor  { color: #8B0000 }   /* dark red */
+.notecolor     { color: #009900 }   /* medium green */
+
+.indent30  {
+  margin-left: 30px ;
+}
+
+.indent40  {
+  margin-left: 40px ;
+}
+
+.textindent25  {
+  text-indent: 25px ;
+}
+
+.strikethrough {
+  text-decoration: line-through ;
+}
+
+.pagebreak, .pagebreakbefore {
+  page-break-before: always ;
+}
+
+.nobreak, .nowrap {
+  white-space : nowrap ;
+}
+
+.toplink, a.toplink {
+  background-color: #09F ;  /* light blue */
+  color: white ;
+  border-bottom: 1px solid #09F ;
+  padding: 0px 0.75em ;
+  font-size: 10pt ;
+  font-weight: normal ;
+  text-decoration: none ;
+  -moz-border-radius: 3px ;
+  -webkit-border-radius: 3px ;
+  border-radius: 3px ;
+}
+
+.toplink:hover, a.toplink:hover {
+  color: #00F ;
+  background-color: #0FF ;          /* light blue */
+  border-bottom: 1px solid #0FF ;   /* light blue */
+  text-decoration: none ;           /* to override link underlining */
+}
+
+body {
+  /* width: 800px ; */
+  /* margin: 5px auto auto auto ; */
+  margin: 10px 10px ;  /* TB RL */
+  /* background-color: lightgreen ; */
+  position: relative ;
+}
+
+/** Super cool trick to make the scrollbar *always* appear, thus avoiding
+ *  the menu jumping left to right when you navigate to other pages due to the
+ *  presence or absence of the scrollbar.
+ *  Source:  http://www.mediacollege.com/internet/css/scroll-always.html
+ *  added by JMH on October 9, 2011 at 11:16 AM
+ */
+html {
+  overflow-y: scroll ;
+}
+
+/** Code to implement now deprecated HR tag attributes:
+ *    align: [ left, center and right ]
+ *    noshade: (solid line)
+ *    size: [ pixel value ] line height of the element
+ *    width: [ pixel or percentage value ] width of the element
+ *  Source:  http://www.3internet.co.uk/resources/Design/theHRtag.aspx 
+ *  added by JMH on October 9, 2011 at 11:39 AM
+ */
+.hr-thin-white {
+  border: 0 ; 
+  color: white ; 
+  background-color: white ; 
+  height: 1px ;
+  max-width: 93% ;    /* added January 6, 2012 at 11:19 AM to address Resources menu issues */
+  margin: 5px 10px ;  /* added January 6, 2012 at 11:19 AM to address Resources menu issues */
+  text-align: left ;
+}
+
+/** remove underlines from links in lists of lecture notes and assignments 
+ *    and only add them during hovers (Wikipedia style)
+ *  added by JMH on March 7, 2012 at 10:26 AM
+ *  updated by JMH on March 18, 2012 at 11:46 AM
+ */
+#mainbody td a:link {
+  text-decoration: none ;
+}
+#mainbody td a:hover {
+  font-weight: normal ;
+  text-decoration: underline ;
+}
+.nolinkunderline:hover {    /* updated by JMH on August 18, 2013 at 2:22 PM */
+  text-decoration: none ;
+}
+
+/** to override italic style in blueverdana.css read from ~heines */
+h3 {
+  font-style: normal ;
+  /* removed by JMH on December 2, 2014 at 4:44 PM */
+  /* font-size: 10pt ; */
+}
+
+.wannalancit-indent {
+  margin-left: 415px ;
+}
+
+.bold {
+  font-weight: bold ;
+}
+
+.default-cursor {
+  cursor: default ;
+}
+
+/** 
+ *  items at top of page, above menu
+ */
+ 
+#mainpagehead {
+  position: relative ;
+  /* border: 1px red solid ; */
+}
+
+#perflogo {
+  position: absolute ;
+  left: 0px ;
+}
+
+#umllogo {
+  position: absolute ;
+  left: 5px ;
+}
+  @media screen {
+    #umllogo {
+      /* for shadow: x-offset, y-offset, blur, choke (spread length), color, inset (optional) */
+      /* see CSS3 Visual Quickstart Guide by Teague, pp. 300-301 */
+      -moz-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+      -webkit-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+      box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.75) ;
+    }
+  }
+  @media print {
+    #umllogo {
+      border: 1px solid black ;
+    }
+  }
+
+#sitemenu {
+  position: absolute ;
+  right: 5px ;
+  top: 0px ;
+}
+
+.text-center-horiz {
+  text-align: center ;
+}
+
+.text-right-horiz {
+  text-align: right ;
+}
+
+#pagetitle {
+  padding-top: 0px ;
+  font-weight: normal ;
+  /* font-size: 18px ; */
+  text-shadow: gray 1px 1px 2px ;
+  /* border: 1px red solid ; */
+}
+
+@media screen {
+  #pagetitle {
+    text-shadow: gray 1px 1px 2px ;
+  }
+}
+@media print {
+  #pagetitle {
+    /* text-shadow: gray 1px 1px 2px ; */
+  }
+}
+
+#pagetitle h1, #pagetitle h2, #pagetitle h3, #pagetitle h4, #pagetitle h5 {
+  margin-top: 0px ;
+  margin-bottom: 3px ;
+}
+
+#pagetitle-project {
+  padding-top: 50px ;
+  margin-bottom: 0px ;
+  font-weight: bold ;
+  font-size: 20px ;
+  /* color: blue ; */
+  color: darkred ;    /* 139 (decimal), 0x00008b (hex), #8B0000 (HTML), RGB(0x8b,0x00,0x00) */
+  text-shadow: gray 2px 2px 2px ;
+}
+
+#pagetitle-interdisciplinary {
+  margin-top: 0px ;
+  font-weight: normal ;
+  font-size: 20px ;
+  font-style: italic ;
+  /* color: blue ; */
+  color: darkred ;
+  text-shadow: gray 1px 1px 2px ;
+}
+
+
+/** 
+ *  the site menu
+ *  also note #sitemenu ul setting with #menu, #menu ul below
+ */
+
+#sitemenu li a {
+  text-decoration: none ;
+}
+ 
+#sitemenu li a:hover {
+  /* font-weight: bold ; */
+  text-decoration: underline ;
+}
+ 
+#sitemenu li a:link, #sitemenu li a:visited, #sitemenu li a:hover, #sitemenu li a:active {
+  color: blue ;
+}
+
+
+/** 
+ *  the menu: global and first level
+ *  see jQuery: Novice to Ninja, pp. 145-147
+ */
+ 
+#menucontainer {
+  position: relative ;
+  /* width: 800px ; */
+  margin-left: auto ;
+  margin-right: auto ;
+  /* z-index added by JMH on June 12, 2012 at 3:08 PM */
+  /* to make menus appear on top of any links on the page itself */
+  z-index: 100 ;
+}
+
+#menu {
+  height: 26px ;
+  background-color: #09F ;  /* light blue */
+  /* background-color: rgb(0, 112, 192) ;*/
+  /* background-color: darkred ; */
+  margin-left: auto ;
+  margin-right: auto ;
+  -moz-border-radius: 8px ;
+  -webkit-border-radius: 8px ;
+  border-radius: 8px ;
+  overflow: hidden ;    
+    /* updated by JMH on November 7, 2014 at 11:46 AM to avoid page titles being pushed over 
+       when pages are enlarged and the main menu does not fit on a single line */
+}
+
+#menu, #menu ul, #sitemenu ul {
+  padding: 0 ;
+  top: 0 ;
+  list-style: none ;
+}
+
+#menu a {
+  color: white ;
+}
+
+#menu > li {
+  float: left ;               /* makes items horizontal */
+  /* text-align: center ; */  /* this does *NOT* yield the desired effect */
+  padding: 6px 2px ;          /* do *NOT* use margin, use padding, because margin leaves */
+                              /*    a "dead zone" in which the submenu disappears        */
+  border: 0px solid white ;   /* for debugging */
+  /* the following is not needed to achieve thedesired visual effect, and it adds a line */
+  /*    at the bottom left of the main menu bar, so it should not be used                */
+  /* border-bottom: 1px solid #09F ; */  /* blue */
+}
+
+/* the > (direct descendent) pseudo classes ensure that this rule only applies to the horizontal menu */
+#menu > :first-child > :first-child {
+  margin-left: 16px ;
+}
+
+#menu > li > :hover, #menu > li > a > :hover {
+  /* color: lime ; */
+  /* color: #FC0 ; */
+  /* color: gold ; */
+  /* font-weight: bold ; */
+  color: #00F ;
+  background-color: #0FF ;          /* light blue */
+  border-bottom: 1px solid #0FF ;   /* light blue */
+  -moz-border-radius: 3px ;
+  -webkit-border-radius: 3px ;
+  border-radius: 3px ;
+}
+
+#menu > li > a {
+  /* display: block ; */      /* only necessary for padding to work 
+  /* padding: 0px 0px 1px 0px ; */
+  /* width: 11em ; */
+  text-decoration: none ;
+  /* color: white ; */
+  font-weight: bold ;
+}
+
+/* class attributes must be used for colors to allow hovering to work */
+.white {
+  color: white ;
+}
+
+.gold {
+  color: gold ;
+}
+
+.yellow {
+  color: #FF0 ;
+}
+
+.highlight-current-page {
+  color: #00F ;                     /* blue */
+  background-color: #FF0 ;          /* yellow */
+  border-bottom: 1px solid #FF0 ;   /* yellow */
+  -moz-border-radius: 3px ;
+  -webkit-border-radius: 3px ;
+  border-radius: 3px ;
+}
+
+/** 
+ *  second level menu
+ *  note: selectors must be very explicit to override top level menu styles
+ */
+
+/* override change in ~heines/blueverdana.css to keep links white in menus
+ * added by JMH on March 15, 2012 at 11:37 AM
+ */
+#menu a:link, #menu a:active, #menu a:visited { color: white ; text-decoration: none }
+
+/* add an underline to links when they are moused over, a la Wikipedia.
+ *    but to *not* add such decoration to menu links 
+ * added by JMH on March 18, 2012 at 11:24 AM
+ */
+a:hover { text-decoration: underline }
+#menu a:hover { text-decoration: none }
+
+/** :hover is needed here to prevent the radius change for the items from changing 
+ *      the overall menu border radius 
+ *  These two rules are augmented by jQuery per Casteldine & Sharkie, pp. 146-147.
+ *  N.B. Do *not* delete these two rules even after jQuery has been added.  Both
+ *      are required to achieve the desired functionality and visual effect.
+ *  updated by JMH on October 23, 2011 at 2:25 PM
+ */
+#menu li ul, #menu li ul:hover {
+  position: absolute ;
+  left: -999em ;            /* off screen */
+  top: 23px ;
+  background-color: #09F ;  /* blue */
+  /* background-color: darkred ; */
+/* 
+  -moz-border-radius: 8px ;
+  -webkit-border-radius: 8px ;
+  border-radius: 8px ;
+*/
+  -moz-border-bottom-left-radius: 8px ;
+  -webkit-border-bottom-left-radius: 8px ;
+  border-bottom-left-radius: 8px ;
+  -moz-border-bottom-right-radius: 8px ;
+  -webkit-border-bottom-right-radius: 8px ;
+  border-bottom-right-radius: 8px ;
+  border: 0px white solid ;
+  /* z-index: 100 ; */      /* brings on top of main menu */
+}
+
+/* the background color of the submenu */
+#menu li:hover ul, #menu li ul:hover {
+  left: auto ;
+  background-color: #09F ;  /* blue */
+  /* background-color: darkred ; */
+}
+
+#menu li ul#DocumentsMenu {
+  /* width: 20em ; */   /* 21.1em ; */
+}
+
+#menu li ul#WorkshopMenu {
+  /* width: 10em ; */   /* 9em ; */
+}
+
+#menu li ul li {
+  margin: 4px 0em 0px 0em ;
+  padding: 0px 0.5em ;
+/*
+  margin-left: 1em ;
+  margin-right: 1em ;
+  margin-top: 4px ;
+*/
+}
+
+#menu li ul li:first-child {
+  margin-top: 3px ;
+}
+
+#menu li ul li:last-child {
+  margin-bottom: 7px ;
+}
+
+#menu li ul li a {
+  /* display: block ;   */    /* only necessary for padding to work */
+  /* padding: 4px 8px ; */
+  text-decoration: none ;
+  font-weight: normal ;
+  padding: 0em 0.5em ;
+}
+
+#menu li ul li span {         /* for inactive menu items */
+  text-decoration: none ;
+  font-weight: normal ;
+  padding: 0em 0.5em ;
+  color: white ;
+  cursor: default ;
+}
+
+#menu > li > ul > li {
+  color: white ;
+}
+
+#menu > li > ul > li > :hover {
+  color: #00F ;
+  padding: 0em 0.5em ;
+  background-color: #0FF ;          /* light blue */
+  border-bottom: 1px solid #0FF ;   /* light blue */
+  -moz-border-radius: 3px ;
+  -webkit-border-radius: 3px ;
+  border-radius: 3px ;
+}
+
+
+/** 
+ *  main body
+ */
+
+#mainbody {
+  margin: 0px 5px ;  /* TB RL */
+}
+
+#picture2 {
+  margin-top: 5px ;
+  margin-bottom: 30px ;
+}
+
+.float-right-10px {
+  float: right ;
+  margin-left: 10px ;
+}
+
+.round-corners-with-drop-shadow {
+  -moz-border-radius: 8px ;
+  -webkit-border-radius: 8px ;
+  border-radius: 8px ;
+  /* for shadow: x-offset, y-offset, blur, choke (spread length), color, inset (optional) */
+  -moz-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  -webkit-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.75) ;
+}
+
+.float-right-20px {
+  float: right ;
+  margin-left: 20px ;
+}
+
+.float-left-20px {
+  float: left ;
+  margin-right: 20px ;
+}
+
+.float-portrait-left-10px {
+  float: left ;
+  margin-right: 10px ;
+}
+
+.float-portrait-right-10px {
+  float: right ;
+  margin-left: 10px ;
+}
+
+.float-portrait-left-20px {
+  float: left ;
+  margin-right: 20px ;
+}
+
+.float-portrait-right-20px {
+  float: right ;
+  margin-left: 20px ;
+  /* border: 1px black thin ; */
+}
+
+.half-left {
+  width: 350px ;
+  float: left ;
+}
+
+.half-right {
+  width: 350px ;
+  float: right ;
+}
+
+/** 
+ *  workshop announcement
+ *
+ *  Setting { text-align: center } in the parent DIV and then creating a child 
+ *  DIV and setting its display property to inline-block { display: inline-block } 
+ *  causes the child DIV to "shrink to fit", i.e., to have a width governed by the 
+ *  width of its content.  This allows the child DIV to be centered withiin the 
+ *  parent DIV.
+ */
+
+#announcement {             /* parent DIV */
+  text-align: center;
+  margin-left: 20px;
+  float: right;
+  margin-bottom: 10px;
+}
+
+#announcement div {         /* child DIV */
+  display: inline-block ;
+  padding: 5px 20px ;
+  text-align: center ;
+  color: #00F ;
+  background-color: #FF0 ;  /* #09F ; */
+  -moz-border-radius: 8px ;
+  -webkit-border-radius: 8px ;
+  border-radius: 8px ;
+  /* for shadow: x-offset, y-offset, blur, choke (spread length), color, inset (optional) */
+  -moz-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  -webkit-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.75) ;
+}
+
+#announcement p {
+  margin: 5px 0px 5px 0px ;
+}
+
+#announcement div p:first-child {
+  margin-bottom: 15px ;
+}
+
+#announcement div p:first-child strong {
+  padding-bottom: 3px ; 
+  border-bottom: 2px blue solid ;
+}
+
+#announcement div p.left {
+  text-align: left ;
+}
+
+#announcement div p.mb10px {
+  margin-bottom: 10px ;
+}
+
+#announcement a {
+  color: #00F ;
+  text-decoration: none ;
+}
+
+/** 
+ *  items at bottom of page, the NSF footer
+ */
+ 
+#footer-nsf {
+  position: relative ;
+  margin: 0px 110px ;
+  display: inline-block ;
+}
+
+#footer-para {
+  vertical-align: middle ;
+  margin-bottom: 0px ;
+}
+
+.instructorpic {
+  border: solid black 1px ;
+  -moz-border-radius: 8px ;
+  -webkit-border-radius: 8px ;
+  border-radius: 8px ;
+  float: right ;
+  margin-left: 20px ;
+}
+
+@media screen {
+  .instructorpic {
+    /* for shadow: x-offset, y-offset, blur, choke (spread length), color, inset (optional) */
+    -moz-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+    -webkit-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+    box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.75) ;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: darkred ;    /* 139 (decimal), 0x00008b (hex), #8B0000 (HTML), RGB(0x8b,0x00,0x00) */
+}
+
+.lecturenotestable th, .assignmentstable th {
+  color: darkred ;    /* 139 (decimal), 0x00008b (hex), #8B0000 (HTML), RGB(0x8b,0x00,0x00) */
+  margin-left: 0 ;
+}
+
+.darkred, .headcolor, .headercolor {
+  color: darkred ;    /* 139 (decimal), 0x00008b (hex), #8B0000 (HTML), RGB(0x8b,0x00,0x00) */
+}
+
+.textbookimage {
+  margin-left: 20px ; 
+  margin-bottom: 10px ;
+  border: 1px solid black ;
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.75) ;
+}
+
+/**
+ *  for "Go to Teaching" message at top or bottom of the page
+ *  http://stackoverflow.com/questions/8824831/make-div-stay-at-bottom-of-pages-content-all-the-time-even-when-there-are-scrol
+ *    (see SECOND answer)
+ */
+@media screen {
+  
+  html, body {
+    height : 100% ;
+  }
+  #mainbody {
+    position : relative ;
+    height : auto ;
+  }
+  #gototeaching, #gototeachingheader, #gototeachingleftheader, 
+  #gotocourse, #gotocourseheader, #gotocoursetopleft {
+    position : fixed ;  /* see http://jsfiddle.net/uw8f9/ */
+    height : 15px ;
+    width : 100px ;
+    bottom : 3px ;
+    /* right : 3px ; */
+    left : 3px ;
+    background-color : yellow ;
+    text-align : center ;
+    border : 1px solid gray ;
+    -moz-border-radius: 5px ;
+    -webkit-border-radius: 5px ;
+    border-radius: 5px ;
+  }
+  #gotocourse, #gotocourseheader {
+    right : 108px ;
+  }
+  #gototeachingheader, #gotocourseheader, #gototeachingleftheader, #gotocoursetopleft {
+    top : 4px ;
+  }
+  #gototeachingleftheader, #gotocoursetopleft {
+    left : 108px ;
+  }
+  #gototeachingrightheader {
+  #gotocourse, #gotocourseheader, #gotocoursetopleft {
+    position : fixed ;  /* see http://jsfiddle.net/uw8f9/ */
+    height : 15px ;
+    width : 100px ;
+    bottom : 3px ;
+    right : 3px ;
+    /* left : 3px ; */
+    background-color : yellow ;
+    text-align : center ;
+    border : 1px solid gray ;
+    -moz-border-radius: 5px ;
+    -webkit-border-radius: 5px ;
+    border-radius: 5px ;
+  }
+  
+}
+
+/* added by JMH on January 20, 2014 at 9:18 AM to hide "Go to" messages when printing
+ * moved by JMH on August 28, 2015 at 10:55 PM to blueverdana08pt.css because that file
+ *    is loaded by JavaScript and is therefore loaded after the CSS files 
+ */
+@media print {
+  #gototeaching, #gototeachingheader, #gototeachingleftheader, 
+  #gotocourse, #gotocourseheader, #gotocoursetopleft,
+  #gototeachingheader a:link, #gototeachingheader a:active, #gototeachingheader a:visited,  {
+    display: none ;
+    /* color: white ; */
+    /* visibility : hidden ; */
+    /* opacity : 0 ; */
+    /* color : red ; */
+  }
+}
+
+/* ensure that previous and next buttons are on top of any other elements */
+/* updated by JMH on August 29, 2013 at 1:53 PM */
+#prevnextlinks {
+  z-index : 100 ;
+}
+
+/* prevent text formatted as code from breaking across lines      */
+code {
+  white-space: nowrap ;
+}
+
+/* added by JMH on August 22, 2014 at 11:52 AM to add zebra striping to roster table */
+/* http://css-tricks.com/snippets/css/css3-zebra-striping-a-table                    */
+#tblRoster tbody tr:nth-child(even) {
+  background-color: #FFE0A0 ;  /* SandyBrown */
+}
+#tblRoster tbody tr td:nth-child(even) {
+  background-color: white ;    /* separator columns */
+}
+/* added by JMH on September 10, 2014 at 10:18 AM to add padding to shaded cells */
+#tblRoster tbody tr td:nth-child(odd) {
+  padding: 0 5px ;    /* separator columns */
+}

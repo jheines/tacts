@@ -1,0 +1,733 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**
+ *  File:  /~heines/css/jessehome.css
+ *  Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
+ *  Copyright (c) 2011 by Jesse M. Heines.  All rights reserved.  May be freely
+ *    copied or excerpted for educational purposes with credit to the author.
+ *  created by JMH on August 24, 2012 at 7:59 PM
+ *  updated by JMH on October 8, 2013 at 8:55 AM
+ *  updated by JMH on November 7, 2014 at 11:47 AM to add overflow: hidden to horizontal menu
+ *  updated by JMH on February 11, 2015 at 10:42 AM to add .colorLinkBlue
+ *  updated by JMH on July 7, 2015 at 9:44 AM to adjust #contactbulletscontainer for World Time Clock
+ *  updated by JMH on July 26, 2015 at 8:28 PM to make add .rightarrow
+ *
+ *  Reminders:  >  direct child selector
+ *              +  adjacent sibling selector
+ *             ^=  beginning substring attribute value selector
+ *             $=  ending substring attribute value selector
+ *             *=  arbitrary substring atribute value selector (anywhere in the attribute text)
+ */
+
+.indent30  {
+  margin-left: 30px ;
+}
+
+.indent40  {
+  margin-left: 40px ;
+}
+
+.strikethrough {
+  text-decoration: line-through ;
+}
+
+.nobold {
+  font-weight: normal ;
+}
+
+body {
+  /* width: 800px ; */
+  /* margin: 5px auto auto auto ; */
+  margin: 10px 10px ;  /* TB RL */
+  /* background-color: lightgreen ; */
+  position: relative ;
+  font-size: 8pt ;
+}
+
+body, blockquote, li, p, td, th {
+  /* font-size: 8pt ; */
+}
+
+.font6pt {
+  font-size: 6pt ;
+}
+
+.font7pt {
+  font-size: 7pt ;
+}
+
+
+/** Super cool trick to make the scrollbar *always* appear, thus avoiding
+ *  the menu jumping left to right when you navigate to other pages due to the
+ *  presence or absence of the scrollbar.
+ *  Source:  http://www.mediacollege.com/internet/css/scroll-always.html
+ *  added by JMH on October 9, 2011 at 11:16 AM
+ */
+html {
+  overflow-y: scroll ;
+}
+
+
+/** Code to implement now decremented HR tag attributes:
+ *    align: [ left, center and right ]
+ *    noshade: (solid line)
+ *    size: [ pixel value ] line height of the element
+ *    width: [ pixel or percentage value ] width of the element
+ *  Source:  http://www.3internet.co.uk/resources/Design/theHRtag.aspx
+ *  added by JMH on October 9, 2011 at 11:39 AM
+ */
+.hr-thin-white {
+  border: 0 ;
+  color: white ;
+  background-color: white ;
+  height: 1px ;
+  max-width: 93% ;    /* added January 6, 2012 at 11:19 AM to address Resources menu issues */
+  margin: 5px 10px ;  /* added January 6, 2012 at 11:19 AM to address Resources menu issues */
+  text-align: left ;
+}
+
+.wannalancit-indent {
+  margin-left: 415px ;
+}
+
+.bold {
+  font-weight: bold ;
+}
+
+.default-cursor {
+  cursor: default ;
+}
+
+
+/**
+ *  blueverdana.css overrides
+ */
+
+h3 {
+  font-style: normal ;
+}
+
+a:link, a:active, a:visited, .colorLinkBlue {
+  color: #07F ;   /* = #0077FF = rgb(0,119,255) = not-quite-so light blue to look balanced with other blues */
+}
+
+h3 {
+  margin-top: 15px
+}
+h3.quote {
+  margin-top: 10px ;
+  margin-bottom: 0px ;
+  font-size: 8pt ;
+  font-style: normal ;
+  margin-left: 20px
+}
+h5.quote {
+  margin-top: 0px ;
+  margin-bottom: 5px ;
+  font-size: 7pt ;
+  font-style: italic ;
+  margin-left: 40px
+}
+
+
+/**
+ *  items at top of page, above menu
+ */
+
+#mainpagehead {
+  position: relative ;
+  /* border: 1px red solid ; */
+}
+
+#perflogo {
+  position: absolute ;
+  left: 0px ;
+}
+
+#umllogo {
+  position: absolute ;
+  left: 5px ;
+}
+  @media screen {
+    #umllogo {
+      /* for shadow: x-offset, y-offset, blur, choke (spread length), color, inset (optional) */
+      /* see CSS3 Visual Quickstart Guide by Teague, pp. 300-301 */
+      -moz-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+      -webkit-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+      box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.75) ;
+    }
+  }
+  @media print {
+    #umllogo {
+      border: 1px solid black ;
+    }
+  }
+
+#cslogo {
+  position: absolute ;
+  right: 5px ;
+}
+
+#sitemenu {
+  position: absolute ;
+  right: 5px ;
+  top: 0px ;
+}
+
+.text-center-horiz {
+  text-align: center ;
+}
+
+.text-right-horiz {
+  text-align: right ;
+}
+
+#pagetitle {
+  padding-top: 0px ;
+  font-weight: normal ;
+  /* font-size: 18px ; */
+  text-shadow: gray 1px 1px 2px ;
+  /* border: 1px red solid ; */
+}
+
+#pagetitle h1, h2, h3, h4, h5 {
+  margin-top: 0px ;
+  margin-bottom: 3px ;
+}
+
+#pagetitle-project {
+  padding-top: 50px ;
+  margin-bottom: 0px ;
+  font-weight: bold ;
+  font-size: 20px ;
+  color: blue ;
+  text-shadow: gray 2px 2px 2px ;
+}
+
+#pagetitle-interdisciplinary {
+  margin-top: 0px ;
+  font-weight: normal ;
+  font-size: 20px ;
+  font-style: italic ;
+  color: blue ;
+  text-shadow: gray 1px 1px 2px ;
+}
+
+
+/**
+ *  the site menu
+ *  also note #sitemenu ul setting with #menu, #menu ul below
+ */
+
+#sitemenu li a {
+  text-decoration: none ;
+}
+
+#sitemenu li a:hover {
+  font-weight: bold ;
+}
+
+#sitemenu li a:link, #sitemenu li a:visited, #sitemenu li a:hover, #sitemenu li a:active {
+  color: blue ;
+}
+
+
+/**
+ *  the menu: global and first level
+ *  see jQuery: Novice to Ninja, pp. 145-147
+ */
+
+#menucontainer {
+  position: relative ;
+  /* width: 800px ; */
+  margin-left: auto ;
+  margin-right: auto ;
+  z-index: 100 ;
+}
+
+#menu {
+  height: 26px ;
+  background-color: #09F ;  /* light blue = rgb(0,153,255) */
+  /* background-color: rgb(0, 153, 255) ;*/
+  margin-left: auto ;
+  margin-right: auto ;
+  -moz-border-radius: 8px ;
+  -webkit-border-radius: 8px ;
+  border-radius: 8px ;
+  overflow: hidden ;    
+    /* updated by JMH on November 7, 2014 at 11:46 AM to avoid page titles being pushed over 
+       when pages are enlarged and the main menu does not fit on a single line */
+}
+
+#menu, #menu ul, #sitemenu ul {
+  padding: 0 ;
+  top: 0 ;
+  list-style: none ;
+}
+
+#menu > li {
+  float: left ;               /* makes items horizontal */
+  /* text-align: center ; */  /* this does *NOT* yield the desired effect */
+  padding: 6px 2px ;          /* do *NOT* use margin, use padding, because margin leaves */
+                              /*    a "dead zone" in which the submenu disappears        */
+  border: 0px solid white ;   /* for debugging */
+  /* the following is not needed to achieve thedesired visual effect, and it adds a line */
+  /*    at the bottom left of the main menu bar, so it should not be used                */
+  /* border-bottom: 1px solid #09F ; */  /* blue */
+}
+
+/* the > (direct descendent) pseudo classes ensure that this rule only applies to the horizontal menu */
+#menu > :first-child > :first-child {
+  margin-left: 16px ;
+}
+
+#menu > li > :hover, #menu > li > a > :hover {
+  /* color: lime ; */
+  /* color: #FC0 ; */
+  /* color: gold ; */
+  /* font-weight: bold ; */
+  color: #00F ;
+  background-color: #0FF ;          /* light blue */
+  border-bottom: 1px solid #0FF ;   /* light blue */
+  -moz-border-radius: 3px ;
+  -webkit-border-radius: 3px ;
+  border-radius: 3px ;
+}
+
+#menu > li > a {
+  /* display: block ; */      /* only necessary for padding to work */
+  /* padding: 0px 0px 1px 0px ; */
+  /* width: 11em ; */
+  text-decoration: none ;
+  /* color: white ; */
+  font-weight: bold ;
+}
+
+/* class attributes must be used for colors to allow hovering to work */
+.white {
+  color: white ;
+}
+
+.gold {
+  color: gold ;
+}
+
+.yellow {
+  color: #FF0 ;
+}
+
+.highlight-current-page {
+  color: #00F ;
+  background-color: #FF0 ;
+  border-bottom: 1px solid #FF0 ;
+  -moz-border-radius: 3px ;
+  -webkit-border-radius: 3px ;
+  border-radius: 3px ;
+}
+
+/**
+ *  second level menu
+ *  note: selectors must be very explicit to override top level menu styles
+ */
+
+/** :hover is needed here to prevent the radius change for the items from changing
+ *      the overall menu border radius
+ *  These two rules are augmented by jQuery per Casteldine & Sharkie, pp. 146-147.
+ *  N.B. Do *not* delete these two rules even after jQuery has been added.  Both
+ *      are required to achieve the desired functionality and visual effect.
+ *  updated by JMH on October 23, 2011 at 2:25 PM
+ */
+#menu li ul, #menu li ul:hover {
+  position: absolute ;
+  left: -999em ;            /* off screen */
+  top: 23px ;
+  background-color: #09F ;  /* blue */
+/*
+  -moz-border-radius: 8px ;
+  -webkit-border-radius: 8px ;
+  border-radius: 8px ;
+*/
+  -moz-border-bottom-left-radius: 8px ;
+  -webkit-border-bottom-left-radius: 8px ;
+  border-bottom-left-radius: 8px ;
+  -moz-border-bottom-right-radius: 8px ;
+  -webkit-border-bottom-right-radius: 8px ;
+  border-bottom-right-radius: 8px ;
+  border: 0px white solid ;
+  /* z-index: 100 ; */      /* brings on top of main menu */
+}
+
+/* first submenu (under Site Home) 
+ * selector derived using Firebug
+ * updated by JMH on April 17, 2013 at 9:00 AM
+ */
+ul#menu li ul#SiteHome {
+  margin-left: 16px ;
+}
+
+#menu li:hover ul, #menu li ul:hover {
+  left: auto ;
+  background-color: #09F ;
+}
+
+#menu li ul#DocumentsMenu {
+  /* width: 20em ; */   /* 21.1em ; */
+}
+
+#menu li ul#WorkshopMenu {
+  /* width: 10em ; */   /* 9em ; */
+}
+
+#menu li ul li {
+  margin: 4px 0em 0px 0em ;
+  padding: 0px 0.5em ;
+/*
+  margin-left: 1em ;
+  margin-right: 1em ;
+  margin-top: 4px ;
+*/
+}
+
+#menu li ul li:first-child {
+  margin-top: 3px ;
+}
+
+#menu li ul li:last-child {
+  margin-bottom: 7px ;
+}
+
+#menu li ul li a {
+  /* display: block ;   */    /* only necessary for padding to work */
+  /* padding: 4px 8px ; */
+  text-decoration: none ;
+  font-weight: normal ;
+  padding: 0em 0.5em ;
+  color: white ;
+}
+
+#menu li ul li span {         /* for inactive menu items */
+  text-decoration: none ;
+  font-weight: normal ;
+  padding: 0em 0.5em ;
+  color: white ;
+  cursor: default ;
+}
+
+#menu > li > ul > li > :hover {
+  color: #00F ;
+  padding: 0em 0.5em ;
+  background-color: #0FF ;          /* light blue */
+  border-bottom: 1px solid #0FF ;   /* light blue */
+  -moz-border-radius: 3px ;
+  -webkit-border-radius: 3px ;
+  border-radius: 3px ;
+}
+
+
+/**
+ *  main body
+ */
+
+#mainbody {
+  margin: 0px 5px ;  /* TB RL */
+}
+
+#picture2 {
+  margin-top: 5px ;
+  margin-bottom: 30px ;
+}
+
+.float-right-10px {
+  float: right ;
+  margin-left: 10px ;
+}
+
+.round-corners-with-drop-shadow {
+  -moz-border-radius: 12px ;
+  -webkit-border-radius: 12px ;
+  border-radius: 12px ;
+  /* for shadow: x-offset, y-offset, blur, choke (spread length), color, inset (optional) */
+  -moz-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  -webkit-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.75) ;
+}
+
+.float-right-20px {
+  float: right ;
+  margin-left: 20px ;
+}
+
+.float-left-20px {
+  float: left ;
+  margin-right: 20px ;
+}
+
+.float-portrait-left-10px {
+  float: left ;
+  margin-right: 10px ;
+}
+
+.float-portrait-right-10px {
+  float: right ;
+  margin-left: 10px ;
+}
+
+.float-portrait-left-20px {
+  float: left ;
+  margin-right: 20px ;
+}
+
+.float-portrait-right-20px {
+  float: right ;
+  margin-left: 20px ;
+  /* border: 1px black thin ; */
+}
+
+.half-left {
+  width: 350px ;
+  float: left ;
+}
+
+.half-right {
+  width: 350px ;
+  float: right ;
+}
+
+
+/**
+ *  workshop announcement
+ *
+ *  Setting { text-align: center } in the parent DIV and then creating a child
+ *  DIV and setting its display property to inline-block { display: inline-block }
+ *  causes the child DIV to "shrink to fit", i.e., to have a width governed by the
+ *  width of its content.  This allows the child DIV to be centered withiin the
+ *  parent DIV.
+ */
+
+#announcement {             /* parent DIV */
+  text-align: center ;
+  /* margin-top: 25px ; */
+}
+
+#announcement div {         /* child DIV */
+  display: inline-block ;
+  padding: 5px 20px ;
+  text-align: center ;
+  color: #00F ;
+  background-color: #FF0 ;  /* #09F ; */
+  -moz-border-radius: 8px ;
+  -webkit-border-radius: 8px ;
+  border-radius: 8px ;
+  /* for shadow: x-offset, y-offset, blur, choke (spread length), color, inset (optional) */
+  -moz-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  -webkit-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.75) ;
+}
+
+#announcement p {
+  margin: 5px 0px 5px 0px ;
+}
+
+#announcement div p:first-child {
+  margin-bottom: 15px ;
+}
+
+#announcement div p:first-child strong {
+  padding-bottom: 3px ;
+  border-bottom: 2px blue solid ;
+}
+
+#announcement a {
+  color: #00F ;
+  text-decoration: none ;
+}
+
+/**
+ *  items at bottom of page, the NSF footer
+ */
+
+#footer-nsf {
+  position: relative ;
+  margin: 0px 110px ;
+  display: inline-block ;
+}
+
+#footer-para {
+  vertical-align: middle ;
+  margin-bottom: 0px ;
+}
+
+
+/**
+ *  styles specific to slide shows created with the Cycle plugin
+ */
+
+#slideshowcontainer {
+  float: right ;
+  position: relative ;  /* required for absolute positioning of embedded DIV to work */
+  margin-left: 20px ;
+}
+
+.slideshow {
+  width: 400px ;
+  height: 400px ;
+  border: 1px solid #000;
+  background-color: black ;
+  /* background-color: lightgreen ; */
+  /* float: right ; */
+
+  /* Note that the following style must be applied to *both* the DIV and the IMG. */
+  -moz-border-radius: 12px ;
+  -webkit-border-radius: 12px ;
+  border-radius: 12px ;
+  /* for shadow: x-offset, y-offset, blur, choke (spread length), color, inset (optional) */
+  -moz-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  -webkit-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.75) ;
+}
+
+.slideshow > img {
+  /** N.B. The following rules have no effect when the Cycle plugin is running.
+   *    However, they can be set with the Cycle plugin width and height options
+   *    if the fit option is also set to true (= 1).
+   * height: 300 ;
+   * width: 400 ;
+   */
+
+  /** N.B. The following rules have no effect when the Cycle plugin is running.
+   *    display: block ;
+   *    margin-left: auto ;
+   *    margin-right: auto ;
+   *    position: absolute ;
+   */
+
+  /* Note that the following style must be applied to *both* the DIV and the IMG. */
+  -moz-border-radius: 12px ;
+  -webkit-border-radius: 12px ;
+  border-radius: 12px ;
+  /* for shadow: x-offset, y-offset, blur, choke (spread length), color, inset (optional) */
+  -moz-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  -webkit-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.75) ;
+}
+
+.arrow {
+  width: 26px ;
+  height: 26px ;
+  /* border: 1px solid #f00 ; */
+}
+.rightarrow {
+  position: absolute ;
+  top: 0px ;
+  right: 0px ;
+}
+#imgcaption {
+  position: relative ;
+  margin-top: 10px ;
+  /* border: 1px solid #00f ; */
+}
+#imgprev{
+  float: left ;
+  margin-left: 8px ;
+}
+#imgnext {
+  /* float: right ; */
+  /* margin-right: 8px ; */
+}
+#imgCaptionText {
+  display: inline-block ;   /* required for width to have an effect */
+  width: 340px ;
+  text-align: center ;
+  color: #800 ;             /* darkred */
+  font-weight: bold ;
+  /* border: 1px solid #000; */
+}
+#imgnum {
+  font-weight: bold ;
+  position: absolute ;      /* required for top to have an effect */
+  top: 385px ;              /* further adjusted in jessehome.js (if necessary) for preceding head text */
+  z-index: 200 ;            /* updated by JMH on June 11, 2013 at 10:36 AM to "fix" (Jesse) menu */
+                            /* updated again by JMH on June 18, 2015 at 1:04 AM for Cycle2 */
+  color: white ;
+  text-align: right ;
+  width: 395px ;
+  font-size: 8pt ;
+}
+
+blockquote#research {
+  margin-left: 25px ;
+}
+
+#jessepic, #volunteer_reader, #tacts {
+  -moz-border-radius: 8px ;
+  -webkit-border-radius: 8px ;
+  border-radius: 8px ;
+  /* for shadow: x-offset, y-offset, blur, choke (spread length), color, inset (optional) */
+  -moz-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  -webkit-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.75) ;
+}
+
+#CTIScover {
+  /* for shadow: x-offset, y-offset, blur, choke (spread length), color, inset (optional) */
+  -moz-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  -webkit-border-shadow: 3px 3px 5px 1px rgba(0,0,0,.75) ;
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.75) ;
+}
+
+#jessepiccontainer {
+  margin-top: 7px ;
+  float: left ;
+}
+
+#jessepic {
+  margin: 0px 0px 20px 25px ;  /* T R B L */
+}
+
+#contactbulletscontainer {
+  /* margin-left: 130px ; */  /* for use with picture of me */
+  margin-left: 90px ;         /* for use with 100px WorldTimeServer clock */
+}
+
+#creditstitle {
+  margin-left: 130px ;        /* for use with 100px WorldTimeServer clock */
+}
+#creditslist {
+  margin-left: 100px ;        /* for use with 100px WorldTimeServer clock */
+}
+#creditslist li {
+  font-size: 7pt ;
+}
+
+/**
+ *  set header color to darkred
+ */
+
+h1, h2, h3, h4, h5, h6 {
+  color: #8B0000 ;    /* darkred */
+}
+
+.lecturenotestable th, .assignmentstable th {
+  color: #8B0000 ;    /* darkred */
+  margin-left: 0 ;
+}
+
+#CriticalInfo {
+  margin-left: 20px ;
+}
+
+/*
+  #CriticalInfo tr:nth-child( 2n+1 ) {
+    background-color: lightgray ;
+  }
+*/
+
+/* updated by JMH on June 25, 2015 at 8:04 PM */
+.headcolor {
+  color: #8B0000 ;    /* darkred */
+}
+
+.centered {
+  text-align: center ;
+}
