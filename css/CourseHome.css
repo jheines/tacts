@@ -702,7 +702,7 @@ h1, h2, h3, h4, h5, h6 {
 @media print {
   #gototeaching, #gototeachingheader, #gototeachingleftheader, 
   #gotocourse, #gotocourseheader, #gotocoursetopleft,
-  #gototeachingheader a:link, #gototeachingheader a:active, #gototeachingheader a:visited,  {
+  #gototeachingheader a:link, #gototeachingheader a:active, #gototeachingheader a:visited {
     display: none ;
     /* color: white ; */
     /* visibility : hidden ; */
