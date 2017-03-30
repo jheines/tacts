@@ -677,7 +677,7 @@ h1, h2, h3, h4, h5, h6 {
   #gototeachingleftheader, #gotocoursetopleft {
     left : 108px ;
   }
-  #gototeachingrightheader {
+  #gototeachingrightheader,
   #gotocourse, #gotocourseheader, #gotocoursetopleft {
     position : fixed ;  /* see http://jsfiddle.net/uw8f9/ */
     height : 15px ;
