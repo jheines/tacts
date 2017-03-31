@@ -9,7 +9,7 @@
   Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
   Copyright (c) 2017 by Jesse M. Heines.  All rights reserved.  May be freely 
     copied or excerpted for educational purposes with credit to the author.
-  updated by JMH on March 30, 2017 at 8:21 PM
+  updated by JMH on March 31, 2017 at 3:37 PM
   
   N.B. An extra space (or space + &nbsp;) is needed at the end of <li> tags before the 
   corresponding </li> tag so that Safari on the iPhone does not change the size of the
@@ -48,9 +48,10 @@
       #MuseScoreLogo {
         margin-top: 5px ;
       }
-    }
-    table tr td ol ul {
-
+      table tbody tr td ol ul li {
+        /* needed to make bullets inside tables the same size as those outside */
+        font-size : 12pt ;
+      }
     }
   </style>
   
@@ -88,6 +89,7 @@
   <ol>
     <li><a href="../resources/WorkshopWorkbook.pdf">Entire workbook as a color PDF</a> &nbsp;</li>
     <li><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1515767">NSF Award Abstract page</a> &nbsp;</li>
+    <li><a href="../resources/2017-01-24_LowellSun_Reprint_v3.pdf">Lowell Sun article on the project</a> &mdash; published January 24, 2017 &nbsp;</li>
     <li><a href="http://teachacomputertosing.org">Student-created project website</a> &nbsp;</li>
   </ol>
   
@@ -135,10 +137,10 @@
         <ol class="notopbot">
           <li>EasyABC</li>
           <ul>
-            <li><a href="https://sourceforge.net/projects/easyabc/files/EasyABC/1.3.7.6/">Download Site</a></li>
-            <li><a href="http://abcnotation.com">ABC Notation Home Page</a></li>
-            <li><a href="http://abcnotation.com/wiki/abc:standard:v2.1">ABC Notation Documentation</a></li>
-            <li><a href="http://abcnotation.com/software">List of ABC Software Packages</a></li>
+            <li><a href="https://sourceforge.net/projects/easyabc/files/EasyABC/1.3.7.6/">Download Site</a> &nbsp;</li>
+            <li><a href="http://abcnotation.com">ABC Notation Home Page</a> &nbsp;</li>
+            <li><a href="http://abcnotation.com/wiki/abc:standard:v2.1">ABC Notation Documentation</a> &nbsp;</li>
+            <li><a href="http://abcnotation.com/software">List of ABC Software Packages</a> &nbsp;</li>
           </ul>
         </ol>
       </td>
