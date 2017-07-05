@@ -14,6 +14,17 @@
   N.B. An extra space (or space + &nbsp;) is needed at the end of <li> tags before the 
   corresponding </li> tag so that Safari on the iPhone does not change the size of the
   number or bullet, making it smaller than those of <li> tags that end with normal text.
+  
+  A better approach is at:
+        http://smallbusiness.chron.com/make-smaller-css-bullets-50074.html  
+  3. Reset the unordered list style to none with the statement: ul{ list-style: none; }
+     This statement again overrides the browser defaults to reset the unordered list style
+     to "none."
+  4. Insert the symbol to be used for the bullet and specify the font size to use like
+     this: ul li:before{ content:"•"; font-size:10pt; } The “:before” pseudo-element
+     inserts a bullet element in front of the contents for each list item. The “font-size”
+     statement specifies a slightly smaller, 10-point, bullet as the list marker. Adjust
+     the size as needed for your Web page. 
 -->
 
   <script src="../scripts/cookies.js"></script>
@@ -184,8 +195,8 @@
         <ol class="notopbot">
           <li>EasyABC &nbsp;</li>
           <ul>
-            <li><a href="https://sourceforge.net/projects/easyabc/files/EasyABC/1.3.7.6/">Download Site</a> &nbsp;</li>
-            <li><a href="http://abcnotation.com">ABC Notation Home Page</a> &nbsp;</li>
+            <li><a href="https://sourceforge.net/projects/easyabc/files/EasyABC/1.3.7.6/">Download Site</a>&nbsp;</li>
+            <li><a href="http://abcnotation.com">ABC Notation Home Page</a>&nbsp;</li>
             <li><a href="http://abcnotation.com/wiki/abc:standard:v2.1">ABC Notation Documentation</a> &nbsp;</li>
             <li><a href="http://abcnotation.com/software">List of ABC Software Packages</a> &nbsp;</li>
           </ul>
